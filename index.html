@@ -1,147 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barbearia Raiz - Corte Premium</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20Px;
-      right: 20Px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60Px;
-      height: 60Px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30Px;
-      box-shadow: 0 2Px 5Px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: transform 0.3s ease;
-    }
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Raiz - Corte Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(18,18,18,0.9) 0%, rgba(18,18,18,0.7) 100%), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80') center/cover no-repeat;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .haircut-card {
+            transition: all 0.3s ease;
+        }
+        .haircut-card:hover {
+            transform: scale(1.03);
+        }
+        .payment-method:hover {
+            border-color: #3b82f6;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active-nav::after {
+            width: 100%;
+        }
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
-
-  <!-- Navbar -->
-  <nav class="bg-black text-white p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">Barbearia Raiz</h1>
-    <ul class="hidden md:flex space-x-6">
-      <li><a href="#servicos" class="hover:text-yellow-400">Serviços</a></li>
-      <li><a href="#estilos" class="hover:text-yellow-400">Estilos</a></li>
-      <li><a href="#agendamento" class="hover:text-yellow-400">Agendamento</a></li>
-      <li><a href="#contato" class="hover:text-yellow-400">Contato</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero -->
-  <section class="bg-[url('https://images.unsplash.com/photo-1621605815977-98a329565f20?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white">
-    <div class="bg-black bg-opacity-70 p-8 rounded-lg">
-      <h2 class="text-4xl md:text-6xl font-bold">Estilo que valoriza você</h2>
-      <p class="mt-4 text-lg md:text-xl">Cortes modernos e clássicos na Barbearia Raiz</p>
-      <a href="#agendamento" class="mt-6 inline-block bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg shadow hover:bg-yellow-600 transition">
-        Agende seu horário
-      </a>
-    </div>
-  </section>
-
-  <!-- Serviços -->
-  <section id="servicos" class="py-16 px-6 md:px-20">
-    <h3 class="text-3xl font-bold text-center mb-12 text-yellow-400">Nossos Serviços</h3>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="bg-gray-800 p-6 shadow rounded-lg hover:shadow-lg transition">
-        <h4 class="text-xl font-semibold mb-2">Corte de Cabelo</h4>
-        <p class="text-gray-400">Cortes modernos e tradicionais para todos os estilos.</p>
-      </div>
-      <div class="bg-gray-800 p-6 shadow rounded-lg hover:shadow-lg transition">
-        <h4 class="text-xl font-semibold mb-2">Barba</h4>
-        <p class="text-gray-400">Design e acabamento profissional para sua barba.</p>
-      </div>
-      <div class="bg-gray-800 p-6 shadow rounded-lg hover:shadow-lg transition">
-        <h4 class="text-xl font-semibold mb-2">Sobrancelha</h4>
-        <p class="text-gray-400">Aparência natural e bem cuidada para realçar seu olhar.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Estilos -->
-  <section id="estilos" class="bg-gray-800 py-16 px-6 md:px-20">
-    <h3 class="text-3xl font-bold text-center mb-12 text-yellow-400">Estilos Populares</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-900 shadow rounded-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1621605815977-98a329565f20?auto=format&fit=crop&w=800&q=80" alt="Corte Fade" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-semibold mb-2">Fade</h4>
-          <p class="text-gray-400">O clássico degradê que nunca sai de moda.</p>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-900/80 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-cut text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-white font-bebas text-2xl">BARBEARIA <span class="text-blue-500">RAIZ</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-white px-3 py-2 text-sm font-medium">Início</a>
+                        <a href="#services" class="nav-link text-white px-3 py-2 text-sm font-medium">Serviços</a>
+                        <a href="#styles" class="nav-link text-white px-3 py-2 text-sm font-medium">Estilos</a>
+                        <a href="#booking" class="nav-link text-white px-3 py-2 text-sm font-medium">Agendamento</a>
+                        <a href="#payment" class="nav-link text-white px-3 py-2 text-sm font-medium">Pagamento</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="bg-gray-900 shadow rounded-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Undercut" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-semibold mb-2">Undercut</h4>
-          <p class="text-gray-400">Visual ousado e estiloso para homens modernos.</p>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900/95 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-white block px-3 py-2 text-base font-medium">Início</a>
+                <a href="#services" class="text-white block px-3 py-2 text-base font-medium">Serviços</a>
+                <a href="#styles" class="text-white block px-3 py-2 text-base font-medium">Estilos</a>
+                <a href="#booking" class="text-white block px-3 py-2 text-base font-medium">Agendamento</a>
+                <a href="#payment" class="text-white block px-3 py-2 text-base font-medium">Pagamento</a>
+            </div>
         </div>
-      </div>
-      <div class="bg-gray-900 shadow rounded-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1599351431202-1e4e19d0b785?auto=format&fit=crop&w=800&q=80" alt="Buzz Cut" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-semibold mb-2">Buzz Cut</h4>
-          <p class="text-gray-400">Prático, minimalista e cheio de atitude.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-20 md:pt-32 md:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">ESTILO É <span class="text-blue-500">ATITUDE</span></h1>
+                    <p class="text-gray-300 text-lg mb-8">Na Barbearia Raiz, transformamos seu visual em uma declaração de estilo. Agende seu corte premium com nossos especialistas.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#booking" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105">
+                            Agendar Corte
+                        </a>
+                        <a href="#styles" class="bg-transparent hover:bg-gray-800 border border-gray-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                            Ver Estilos
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-6 -left-6 w-full h-full border-2 border-blue-500 rounded-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                             alt="Barbeiro trabalhando" 
+                             class="relative rounded-lg shadow-2xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Agendamento -->
-  <section id="agendamento" class="py-16 px-6 md:px-20">
-    <h3 class="text-3xl font-bold text-center mb-12 text-yellow-400">Agende seu Horário</h3>
-    <form class="max-w-xl mx-auto bg-gray-800 p-8 shadow rounded-lg">
-      <div class="mb-4">
-        <label class="block mb-2 font-semibold">Nome</label>
-        <input type="text" class="w-full border border-gray-600 bg-gray-900 text-white p-3 rounded" placeholder="Seu nome">
-      </div>
-      <div class="mb-4">
-        <label class="block mb-2 font-semibold">Telefone</label>
-        <input type="tel" class="w-full border border-gray-600 bg-gray-900 text-white p-3 rounded" placeholder="(00) 00000-0000">
-      </div>
-      <div class="mb-4">
-        <label class="block mb-2 font-semibold">Serviço</label>
-        <select class="w-full border border-gray-600 bg-gray-900 text-white p-3 rounded">
-          <option>Corte de Cabelo</option>
-          <option>Barba</option>
-          <option>Sobrancelha</option>
-        </select>
-      </div>
-      <div class="mb-6">
-        <label class="block mb-2 font-semibold">Data e Hora</label>
-        <input type="datetime-local" class="w-full border border-gray-600 bg-gray-900 text-white p-3 rounded">
-      </div>
-      <button type="submit" class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-600 transition">
-        Confirmar Agendamento
-      </button>
-    </form>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">NOSSOS <span class="text-blue-500">SERVIÇOS</span></h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Corte Masculino</h3>
+                    <p class="text-gray-400 mb-4">Corte personalizado com técnicas modernas para realçar seu estilo.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-500 font-bold text-lg">R$ 50,00</span>
+                        <button class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition duration-300">
+                            Agendar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-razor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Barba Desenhada</h3>
+                    <p class="text-gray-400 mb-4">Modelagem e tratamento completo para deixar sua barba impecável.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-500 font-bold text-lg">R$ 40,00</span>
+                        <button class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition duration-300">
+                            Agendar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Sobrancelha</h3>
+                    <p class="text-gray-400 mb-4">Design profissional para realçar seu olhar e expressão facial.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-500 font-bold text-lg">R$ 25,00</span>
+                        <button class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition duration-300">
+                            Agendar
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#booking" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Ver Todos os Serviços
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contato -->
-  <section id="contato" class="bg-black text-white py-12 text-center">
-    <h3 class="text-2xl font-bold mb-4 text-yellow-400">Entre em Contato</h3>
-    <p>📍 Rua Exemplo, 123 - Centro</p>
-    <p>📞 (11) 99999-9999</p>
-    <p>✉️ contato@barbeariaraiz.com</p>
-  </section>
-
-  <!-- Botão WhatsApp -->
-  <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-btn">
-    💬
-  </a>
-
-</body>
-</html>
-
+    <!-- Popular Styles Section -->
+    <section id="styles" class="py-16 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">ESTILOS <span class="text-blue-500">POPULARES</span></h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Explore nossos cortes mais requisitados e encontre o estilo perfeito para você.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Style 1 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1596704017259-4d5c3ab0d368?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Degradê (Fade)" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Degradê (Fade)</h3>
+                        <p class="text-gray-400 text-sm mb-4">Transição suave entre os comprimentos para um visual moderno e limpo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 55</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 2 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                         alt="Low Fade" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Low Fade</h3>
+                        <p class="text-gray-400 text-sm mb-4">Degradê discreto na parte baixa da cabeça para um visual mais conservador.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 50</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 3 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1583864697784-a0ef4b2f3e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Mid Fade" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Mid Fade</h3>
+                        <p class="text-gray-400 text-sm mb-4">Degradê médio, equilibrado entre ousadia e elegância.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 55</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 4 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" 
+                         alt="High Fade" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">High Fade</h3>
+                        <p class="text-gray-400 text-sm mb-4">Degradê alto, mais ousado e marcante para quem gosta de destacar.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 60</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 5 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Pompadour" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Pompadour</h3>
+                        <p class="text-gray-400 text-sm mb-4">Volume no topo com laterais baixas para um visual clássico e elegante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 65</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 6 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Undercut" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Undercut</h3>
+                        <p class="text-gray-400 text-sm mb-4">Laterais raspadas com topo comprido para um contraste marcante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 60</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 7 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1594708767771-a750a6e4eb42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Corte Militar" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Corte Militar</h3>
+                        <p class="text-gray-400 text-sm mb-4">Raspado e prático, ideal para quem busca praticidade e limpeza.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 40</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 8 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Buzz Cut" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
