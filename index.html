@@ -68,20 +68,6 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
-        .booking-form input,
-        .booking-form select,
-        .booking-form textarea {
-            background-color: rgba(31, 41, 55, 0.7);
-            border: 1px solid #374151;
-            color: white;
-        }
-        .booking-form input:focus,
-        .booking-form select:focus,
-        .booking-form textarea:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
-        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -111,7 +97,7 @@
                 </div>
             </div>
         </div>
-                
+        
         <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-gray-900/95 border-t border-gray-800">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -143,9 +129,9 @@
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative w-full max-w-md">
                         <div class="absolute -top-6 -left-6 w-full h-full border-2 border-blue-500 rounded-lg"></div>
-                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
-                              alt="Barbeiro trabalhando"
-                              class="relative rounded-lg shadow-2xl w-full h-auto">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                             alt="Barbeiro trabalhando" 
+                             class="relative rounded-lg shadow-2xl w-full h-auto">
                     </div>
                 </div>
             </div>
@@ -159,7 +145,7 @@
                 <h2 class="text-4xl font-bold text-white mb-4">NOSSOS <span class="text-blue-500">SERVIÇOS</span></h2>
                 <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
             </div>
-                        
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service 1 -->
                 <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
@@ -175,7 +161,7 @@
                         </button>
                     </div>
                 </div>
-                                
+                
                 <!-- Service 2 -->
                 <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
                     <div class="text-blue-500 text-4xl mb-4">
@@ -190,7 +176,7 @@
                         </button>
                     </div>
                 </div>
-                                
+                
                 <!-- Service 3 -->
                 <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
                     <div class="text-blue-500 text-4xl mb-4">
@@ -205,23 +191,9 @@
                         </button>
                     </div>
                 </div>
-                            
-                <!-- Service 4 -->
-                <div class="service-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl p-6">
-                    <div class="text-blue-500 text-4xl mb-4">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Tratamento Capilar</h3>
-                    <p class="text-gray-400 mb-4">Hidratação e revitalização para cabelos saudáveis e com brilho.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-blue-500 font-bold text-lg">R$ 60,00</span>
-                        <button class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition duration-300">
-                            Agendar
-                        </button>
-                    </div>
-                </div>
+                
             </div>
-                        
+            
             <div class="mt-12 text-center">
                 <a href="#booking" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                     Ver Todos os Serviços
@@ -238,13 +210,13 @@
                 <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
                 <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Explore nossos cortes mais requisitados e encontre o estilo perfeito para você.</p>
             </div>
-                        
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Style 1 -->
                 <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <img src="https://images.unsplash.com/photo-1596704017259-4d5c3ab0d368?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                          alt="Degradê (Fade)"
-                          class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1596704017259-4d5c3ab0d368?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Degradê (Fade)" 
+                         class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-white mb-2">Degradê (Fade)</h3>
                         <p class="text-gray-400 text-sm mb-4">Transição suave entre os comprimentos para um visual moderno e limpo.</p>
@@ -256,12 +228,12 @@
                         </div>
                     </div>
                 </div>
-                                
+                
                 <!-- Style 2 -->
                 <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
-                          alt="Low Fade"
-                          class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                         alt="Low Fade" 
+                         class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-white mb-2">Low Fade</h3>
                         <p class="text-gray-400 text-sm mb-4">Degradê discreto na parte baixa da cabeça para um visual mais conservador.</p>
@@ -273,12 +245,12 @@
                         </div>
                     </div>
                 </div>
-                                
+                
                 <!-- Style 3 -->
                 <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <img src="https://images.unsplash.com/photo-1583864697784-a0ef4b2f3e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                          alt="Mid Fade"
-                          class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1583864697784-a0ef4b2f3e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Mid Fade" 
+                         class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-white mb-2">Mid Fade</h3>
                         <p class="text-gray-400 text-sm mb-4">Degradê médio, equilibrado entre ousadia e elegância.</p>
@@ -290,12 +262,12 @@
                         </div>
                     </div>
                 </div>
-                                
+                
                 <!-- Style 4 -->
                 <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80"
-                          alt="High Fade"
-                          class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" 
+                         alt="High Fade" 
+                         class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-white mb-2">High Fade</h3>
                         <p class="text-gray-400 text-sm mb-4">Degradê alto, mais ousado e marcante para quem gosta de destacar.</p>
@@ -307,12 +279,12 @@
                         </div>
                     </div>
                 </div>
-                                
+                
                 <!-- Style 5 -->
                 <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                          alt="Pompadour"
-                          class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Pompadour" 
+                         class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-white mb-2">Pompadour</h3>
                         <p class="text-gray-400 text-sm mb-4">Volume no topo com laterais baixas para um visual clássico e elegante.</p>
@@ -324,12 +296,12 @@
                         </div>
                     </div>
                 </div>
-                                
+                
                 <!-- Style 6 -->
                 <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                          alt="Undercut"
-                          class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Undercut" 
+                         class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold text-white mb-2">Undercut</h3>
                         <p class="text-gray-400 text-sm mb-4">Laterais raspadas com topo comprido para um contraste marcante.</p>
@@ -341,6 +313,27 @@
                         </div>
                     </div>
                 </div>
-                                
+                
                 <!-- Style 7 -->
-                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1594708767771-a750a6e4eb42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Corte Militar" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Corte Militar</h3>
+                        <p class="text-gray-400 text-sm mb-4">Raspado e prático, ideal para quem busca praticidade e limpeza.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 text-sm font-medium">A partir de R$ 40</span>
+                            <button class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition duration-300">
+                                Agendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style 8 -->
+                <div class="haircut-card bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Buzz Cut" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-4">
